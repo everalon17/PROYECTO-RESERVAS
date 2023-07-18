@@ -1,0 +1,26 @@
+<%- include("templates/encabezado") %>
+
+<div class="img">
+</div>
+
+<div class="container">
+<div class="login-box">
+  <h2>Login</h2>
+  <form action="/revisar" method="post" id="formulario">
+    <div class="form-group">
+      <label for="username">Numero de expediente:</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <div class="form-group checkbox">
+      <input type="checkbox" id="remember" name="remember">
+      <label for="remember">Remember me</label>
+    </div>
+    <button type="submit">Log In</button>
+  </form>
+</div>
+</div>
+<%- include("templates/pie") %>
