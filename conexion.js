@@ -19,7 +19,7 @@ var conexion = new Sequelize(db,usuario,password,{
     }
 });
 
-var Usuario=UsuarioModelo(conexion);
+var Alumno=UsuarioModelo(conexion);
 
 conexion.sync({force:false})
 .then(()=>{
@@ -30,5 +30,5 @@ conexion.sync({force:false})
 })
 
 module.exports={
-    Usuario:Usuario
+    Alumno:Alumno
 }

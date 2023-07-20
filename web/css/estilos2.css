@@ -1,0 +1,53 @@
+*{
+    margin: 0px;
+}
+
+body{
+    background-image: url(/web/imagenes/Fondo2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 175%;
+    color: #FFFFFF;
+}
+
+.logo{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.login{
+    /*background-color: white;*/
+    width: 500px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.log{
+    margin: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#usuario{
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+}
+
+#password{
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+}
+
+#button{
+    margin-top: 15px;
+    border-radius: 6px;
+    width: 206px;
+    height: 25px; 
+}
