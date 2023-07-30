@@ -1,12 +1,15 @@
 var Sequelize = require("sequelize");
-var UsuarioModelo = require("./modelos/usuario");
+var AlumnoModelo = require("./modelos/alumno");
+var MaterialModelo = require("./modelos/material");
+var AlmacenModelo = require("./modelos/almacen");
+var LabModelo = require("./modelos/lab");
 require("dotenv").config();
 
-var db=process.env.DB_MYSQL_REMOTO;
-var usuario=process.env.USUARIO_MYSQL_REMOTO;
-var password=process.env.PASSWORD_MYSQL_REMOTO;
-var host=process.env.HOST_MYSQL_REMOTO;
-var port=process.env.PORT_MYSQL_REMOTO;
+var db=process.env.DB_MYSQL_LOCAL;
+var usuario=process.env.USUARIO_MYSQL_LOCAL;
+var password=process.env.PASSWORD_MYSQL_LOCAL;
+var host=process.env.HOST_MYSQL_LOCAL;
+var port=process.env.PORT_MYSQL_LOCAL;
 
 var conexion = new Sequelize(db,usuario,password,{
     host:host,
@@ -14,12 +17,16 @@ var conexion = new Sequelize(db,usuario,password,{
     dialect:"mysql",
     dialectOptions:{
         ssl:{
-            rejectUnauthorized:true
+            rejectUnauthorized:false
         },
     }
 });
 
-var Alumno=UsuarioModelo(conexion);
+var Alumno=AlumnoModelo(conexion);
+var Material=MaterialModelo(conexion);
+var Almacen=AlmacenModelo(conexion);
+var Lab=LabModelo(conexion);
+
 
 conexion.sync({force:false})
 .then(()=>{
@@ -30,5 +37,8 @@ conexion.sync({force:false})
 })
 
 module.exports={
-    Alumno:Alumno
+    Alumno:Alumno,
+    Material:Material,
+    Almacen:Almacen,
+    Lab:Lab
 }

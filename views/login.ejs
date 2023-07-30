@@ -2,27 +2,29 @@
     <div id="logo" class="logo">
         <img src="/web/imagenes/Logo2.png">
     </div>
-    <section class="log">
-        <div id="login" class="login">
+    
+    <div id="login" class="login">
             <form action="/revisar" method="post">
                 <div>
                     <img src="/web/imagenes/perfil.jpg" width="200px">
                 </div>
+                <br>
                 <div id="usu">
                     <label>Usuario</label>
                     <br>
                     <input type="text" name="usuario" id="usuario" autofocus>
                 </div>
+                <br>
                 <div id="pass">
                     <label>Password</label>
                     <br>
                     <input type="password" name="password" id="password" >
                 </div>
+                <br>
                 <div id="butt">
                     <button type="submit" id="button">Iniciar sesion</button>
                 </div>
             </form>
-
-        </div>    
-    </section>
+            <a href="/registro"><button id="buttonReg">Registro</button></a>      
+    </div>
 <%- include("templates/pie") %>
