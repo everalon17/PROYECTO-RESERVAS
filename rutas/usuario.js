@@ -15,6 +15,7 @@ ruta.post("/revisar",(req,res)=>{
         .then((alu)=>{
             if(alu){
                 if(alu.usuario_alu==usuario && alu.password_alu==password){
+                    req.session.alu = alu[0].nom_alu;
                     res.redirect("apartado")
                 }
             }else{
@@ -47,6 +48,10 @@ ruta.get("/apartado",(req,res)=>{
 
 ruta.get("/almacen",(req,res)=>{
     res.render("almacen");
+});
+
+ruta.get("/reserva",(req,res)=>{
+    res.render("reserva");
 });
 
 module.exports=ruta;

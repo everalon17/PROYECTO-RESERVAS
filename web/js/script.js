@@ -95,3 +95,6 @@ nom.addEventListener("blur",(e)=>{
         nom.classList.remove("errorInput");
     }
 });   
+
+
+/*TABLAS*/
