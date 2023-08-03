@@ -1,6 +1,6 @@
 var ruta=require("express").Router();
 var {Alumno} = require("../conexion");
-var {Material} = require("../conexion");
+var {Reserva} = require("../conexion")
 var {Almacen} = require("../conexion");
 var {Lab} = require("../conexion");
 
@@ -15,8 +15,8 @@ ruta.post("/revisar",(req,res)=>{
         .then((alu)=>{
             if(alu){
                 if(alu.usuario_alu==usuario && alu.password_alu==password){
-                    req.session.alu = alu[0].nom_alu;
-                    res.redirect("apartado")
+                    //req.session.alu = alu;
+                    res.redirect("inicio")
                 }
             }else{
                 res.redirect("/");
@@ -24,6 +24,7 @@ ruta.post("/revisar",(req,res)=>{
         })
         .catch((err)=>{
             console.log("Error........."+err);
+            res.redirect("/");
         });
 })
 
@@ -43,8 +44,24 @@ ruta.post("/registro",(req,res)=>{
 });
 
 ruta.get("/apartado",(req,res)=>{
-    res.render("apartado")
+    res.render("apartado");
 })
+
+ruta.post("/apartado",(req,res)=>{
+
+    /*const {hor_r, lab} = req.body;
+
+    req.body.laboratorio = lab;*/
+
+    Reserva.create(req.body)
+    .then(()=>{
+        res.redirect("/apartado")
+    })
+    .catch((err)=>{
+        console.log("Error......"+err);
+    });
+
+});
 
 ruta.get("/almacen",(req,res)=>{
     res.render("almacen");
@@ -53,5 +70,10 @@ ruta.get("/almacen",(req,res)=>{
 ruta.get("/reserva",(req,res)=>{
     res.render("reserva");
 });
+
+ruta.get("/inicio",(req,res)=>{
+    res.render("inicio");
+});
+
 
 module.exports=ruta;

@@ -50,12 +50,13 @@ body{
     justify-content: center;
     text-align: center;
     font-size: 13px;
-    margin-top: 2px;
+    margin-top: 5px;
 }
 
 .infoU1{
     display: block;
-    margin-right: 55px;
+    margin-right: 40px;
+    margin-top: 2px;
 }
 
 label{
@@ -169,4 +170,153 @@ img{
     margin-left: 15px;
     margin-top: 15px;
     border-style: none;
+}
+
+.header{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-left: 280px;
+    background-color: #91a9c9;
+}
+
+ul, ol{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul{
+    list-style: none;
+}
+
+.nav li a{
+    color: #000;
+    text-decoration: none;
+    padding: 4px;
+    margin-left: 5px;
+    display: block;
+}
+
+.nav li a:hover{
+    background-color: #f3e45b;
+}
+
+.nav > li{
+    float: left;
+    background-image: linear-gradient(to top, #92b5e9, #ffffff);
+}
+
+.nav li ul{
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+.nav li:hover > ul{
+    display: block;
+    background-color: aqua;
+}
+
+.fondoOpaco {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+}
+
+.ventanaEmergente {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 2px solid #ccc;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.cerrarBoton {
+    position: absolute;
+    cursor: pointer;
+    background-color: rgb(230, 93, 93);
+    border: none;
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+    font-size: medium;
+    font-style: none;
+    margin-left: 1050px;
+    margin-top: 450px;
+}
+
+.DTV1{
+    display: flex;
+    width: 1100px;
+    height: 400px;
+}
+
+.imgV1{
+    display: flex;
+    height: 60px;
+    width: 300px;
+}
+
+.imgVentana1{
+    display: flex;
+}
+
+.textoV1{
+    display: block;
+    height: 60px;
+    margin-left: 50px;
+    margin-top: 15px;
+}
+
+.textoV1 h3{
+    margin-left: 70px;
+}
+
+.tablaVentana1{
+    display: table;
+    font-size: medium;
+    width: 90%;
+    text-align: center;
+    border: 1px solid #cecece;
+    border-collapse: collapse;
+    margin-left: 50px;
+}
+
+.carrusel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+}
+
+.imgCarrusel{
+        width: 90%;
+        height: auto;
+}
+
+.fooI{
+    display: block;
+    color: white;
+    padding: 5px;
+    background-image: linear-gradient(to right, #46acaf, #06555f);
+    margin-top: 10px;
+    font-size: small;
+    text-align: center;
 }

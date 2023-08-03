@@ -1,3 +1,63 @@
+
+/*TABLAS MARVIN*/
+
+document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+  
+    function showSlide(slideIndex) {
+      slides.forEach((slide, index) => {
+        slide.style.display = index === slideIndex ? 'block' : 'none';
+      });
+    }
+  
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+  
+    // Mostrar el primer slide al cargar la página
+    showSlide(currentSlide);
+  
+    // Iniciar el carrusel automáticamente cada 3 segundos
+    setInterval(nextSlide, 3000);
+  });
+
+function mostrarVentana(laboratorio) {
+    var fondoOpaco = document.getElementById("fondoOpaco");
+    var ventanaEmergente = document.getElementById("ventanaLaboratorio");
+    var labs = document.getElementById("labs");
+
+    var contenidoVentana = laboratorio;
+
+    labs.innerHTML = contenidoVentana;
+
+    fondoOpaco.style.display = "block";
+    ventanaEmergente.style.display = "block";
+
+    document.addEventListener("click", capturarClic, true);
+}
+
+  function cerrarVentana() {
+    var fondoOpaco = document.getElementById("fondoOpaco");
+    var ventanaEmergente = document.getElementById("ventanaLaboratorio");
+    fondoOpaco.style.display = "none";
+    ventanaEmergente.style.display = "none";
+
+    document.removeEventListener("click", capturarClic, true);
+}
+
+  function capturarClic(event) {
+    var ventanaEmergente = document.getElementById("ventanaLaboratorio");
+    var esClicEnVentana = ventanaEmergente.contains(event.target);
+    if (!esClicEnVentana) {
+      event.stopPropagation();
+    }
+}
+
+/*RESERVA*/
+
+
 var opciones = document.getElementById("tip_cuenta")
 var campoAdd = document.getElementById("permiso")
 var btnReg = document.getElementById("btnReg")
@@ -97,4 +157,3 @@ nom.addEventListener("blur",(e)=>{
 });   
 
 
-/*TABLAS*/

@@ -16,6 +16,10 @@ module.exports=(conexion)=>{
         hor_r:{
             type:Sequelize.STRING,
             allowNull:false
+        },
+        lab_r:{
+            type:Sequelize.STRING,
+            allowNull:false,
         }
     });
     return reservaSchema;
